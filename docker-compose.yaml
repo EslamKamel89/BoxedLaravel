@@ -32,6 +32,14 @@ services:
     container_name: mysql
     networks:
       - laravel
-  # composer:
+  composer:
+    build:
+      context: ./dockerfiles
+      dockerfile: composer.dockerfile
+    volumes:
+      - ./src:/var/www/html
+    container_name: composer
+    networks:
+      - laravel
   # artisan:
   # npm:
