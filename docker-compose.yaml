@@ -21,7 +21,17 @@ services:
     container_name: php
     networks:
       - laravel
-  # mysql:
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql
+    env_file:
+      - ./env/mysql.env
+    ports:
+      - 3306:3306
+    container_name: mysql
+    networks:
+      - laravel
   # composer:
   # artisan:
   # npm:

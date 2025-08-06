@@ -1,0 +1,3 @@
+src/
+volumes/
+env/mysql.env
