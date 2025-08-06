@@ -24,7 +24,7 @@ services:
   mysql:
     image: mysql:8.0
     volumes:
-      - ./volumes/mysql:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     env_file:
       - ./env/mysql.env
     ports:
