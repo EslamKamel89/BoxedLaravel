@@ -43,3 +43,5 @@ services:
       - laravel
   # artisan:
   # npm:
+volumes:
+  mysql_data:
