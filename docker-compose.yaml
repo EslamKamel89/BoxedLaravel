@@ -45,7 +45,24 @@ services:
     container_name: composer
     networks:
       - laravel
-  # artisan:
-  # npm:
+  artisan:
+    build:
+      context: ./dockerfiles
+      dockerfile: php.dockerfile
+    volumes:
+      - ./src:/var/www/html:delegated
+    container_name: artisan
+    networks:
+      - laravel
+    entrypoint: ["php", "artisan"]
+  npm:
+    image: node:24.5-alpine
+    working_dir: /var/www/html
+    volumes:
+      - ./src:/var/www/html
+    entrypoint: ["npm"]
+    container_name: npm
+    networks:
+      - laravel
 volumes:
   mysql_data:
