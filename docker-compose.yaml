@@ -13,7 +13,7 @@ services:
       - php
     volumes:
       - ./src/:/var/www/html
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     networks:
       - laravel
   php:
